@@ -12,8 +12,9 @@
     int main(){
     int pontos = 20;
     int pontos2 = 25;
-    int populacao = 201418;
-    int populacao2 = 728400;
+    long int populacao = 201418;
+    long int populacao2 = 728400;
+    int opcao;
     float area = 498;
     float area2 = 650;
     double pib = 13.2; 
@@ -90,18 +91,69 @@
 float poder= populacao + area + pib + pontos + densidade + capita;
 float poder2= populacao2 + area2 + pib2 + pontos2 + densidade2 + capita2;
 
-    printf("    COMPARAÇÃO DAS CARTAS: (POPULAÇÃO)\n");
-    printf("    CARTA 1= %d mil\n", populacao);
-    printf("    CARTA 2= %d mil\n", populacao2);
-    if(populacao>populacao2){
-    printf("    POPULACAO: Carta 1 venceu\n"), populacao,populacao2;
+   
+    printf("ESCOLHA UM ATRIBUTO PARA DEFINIR A CARTA VENCEDORA:\n");
+    printf("1. POPULACAO\n");
+    printf("2. AREA\n");
+    printf("3. PIB\n");
+    printf("4. NUMERO DE PONTOS TURISTICOS\n");
+    printf("5. DENSIDADE DEMOGRAFICA\n");
+    scanf("%d", &opcao);
+
+    switch (opcao){
+    case 1:
+    printf("CARTA 1: %i mil | Carta 2: %i mil\n", populacao, populacao2);
+     if(populacao>populacao2){
+    printf("Carta 1 Venceu\n", populacao,populacao2);
     }
     else if (populacao2>populacao){
-    printf("    Carta 2 Venceu\n"), populacao2, populacao;
+    printf("Carta 2 Venceu\n", populacao2, populacao);
+    }
+      break;
+  
+    case 2:
+    printf("CARTA 1: %.2f Km2 | Carta 2: %.2f Km2\n", area, area2);
+     if(area>area2){
+    printf("Carta 1 venceu\n", area,area2);
+   }
+    else if (area2>area){
+     printf("Carta 2 Venceu\n", area2,area);
+   }
+    break;
+
+    case 3:
+        printf("CARTA 1: %.2lf Bilhoes de reais | Carta 2: %.2lf Bilhoes de reais\n", pib, pib2);
+  if(pib>pib2){
+    printf("Carta 1 Venceu\n", pib,pib2);
+   }
+   else if (pib2>pib){
+     printf("Carta 2 Venceu\n", pib2,pib);
+   }
+    break;
+
+   case 4: 
+    printf("Carta 1: %d | Carta 2: %d\n", pontos, pontos2);
+    if(pontos>pontos2){
+    printf("Carta 1 Venceu\n", pontos,pontos2);
+   }
+   else if (pontos2>pontos){
+    printf("Carta 2 Venceu\n", pontos2,pontos);
+    }
+    break;
+
+    case 5:
+      printf("Carta 1:  %.2lf hab/km2 | Carta 2:  %.2lf hab/km2\n", densidade, densidade2);
+      if(densidade<densidade2){
+    printf("Carta 1 Venceu\n"), densidade,densidade2;
+   }
+   else if(densidade2<densidade){
+    printf("Carta 2 Venceu\n"), densidade2,densidade;
+   }
+    default:
+      break;
     }
 
 
-    
     /*
     else if (populacao2>populacao){
     printf("POPULACAO: Carta 2 vence\n"), populacao2,populacao;
