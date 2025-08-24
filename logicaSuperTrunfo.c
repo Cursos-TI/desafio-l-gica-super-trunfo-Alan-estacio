@@ -100,6 +100,7 @@ float poder2= populacao2 + area2 + pib2 + pontos2 + densidade2 + capita2;
     printf("    Carta 2 Venceu\n"), populacao2, populacao;
     }
 
+    
     /*
     else if (populacao2>populacao){
     printf("POPULACAO: Carta 2 vence\n"), populacao2,populacao;
